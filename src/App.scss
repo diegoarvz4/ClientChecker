@@ -146,8 +146,13 @@ body {
 }
 
 .AdminDashboard {
+  h2 {
+    font-size: 30px;
+  }
   nav{
     padding: 20px;
+    background-color: rgb(238, 238, 238);
+    margin-top: 20px;
     border-bottom: 1px solid rgb(185, 185, 185);
     margin-bottom: 40px;
     ul {
@@ -163,6 +168,77 @@ body {
     }
   }
 }
+
+.AccessReports {
+  h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  table {
+    
+    th{
+      font-size: 20px;
+    }
+    tr{
+      height: 30px;
+    }
+  }
+
+  &-view, &-delete{
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.AccessReport {
+  h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  table {
+    
+    th{
+      font-size: 20px;
+    }
+    tr{
+      height: 30px;
+    }
+  }
+
+  &-edit{
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.Employees{
+  h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+  table {
+    
+    th{
+      font-size: 20px;
+    }
+    tr{
+      height: 30px;
+    }
+  }
+
+  &-addAccessReport{
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+
 
 
 .Error-Message{

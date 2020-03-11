@@ -1,6 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import AccessReportEdit from './access_report_edit';
 
 export default class AccessReports extends React.Component {
   state =  {
@@ -12,13 +10,7 @@ export default class AccessReports extends React.Component {
     this.onGetAccessReports();
   }
 
-  componentDidUpdate() {
-  
-  }
-
   onGetAccessReports = () => {
-    console.log("fetching")
-    console.log(this.props)
     fetch(`${this.props.api_url}/access_reports`, {
       method: 'GET',
       headers: {
@@ -32,20 +24,10 @@ export default class AccessReports extends React.Component {
     })
     .then(res => this.setState({
       access_reports: res,
-      access_reports_view: true,
-      employees_view: false,
-      employee_view: false,
       error: null,
     }))
     .catch(err => {
-      err.text().then( errorMessage => {
-        this.setState({error: JSON.parse(errorMessage).message})
-      })
-      setTimeout(() => {
-        this.setState({
-          error: null
-        })
-      }, 3000);
+      console.log(err);
     })
   }
 
@@ -83,30 +65,32 @@ export default class AccessReports extends React.Component {
     
     return (
       <div className="AccessReports">
-        <div>Access Reports</div>
+        <h2>Access Reports</h2>
           <table style={{width: '100%'}}>
             <thead>
-              <th>Entry</th>
-              <th>Exit</th>
-              <th>Employee</th>
+              <th>ENTRY</th>
+              <th>EXIT</th>
+              <th>EMPLOYEE</th>
               <th></th>
               <th></th>
             </thead>
+            <tbody>
               {
                 this.state.access_reports.map(accRep => (
                   <tr>
                     <td>{accRep.entry}</td>
                     <td>{accRep.exit}</td>
                     <td>{accRep.employee.name}</td>
-                    <td onClick={() => this.toAccessReport(accRep)}>
+                    <td className="AccessReports-view" onClick={() => this.toAccessReport(accRep)}>
                       View
                     </td>
-                    <td onClick={() => this.deleteAccessRep(accRep.id)}>
+                    <td className="AccessReports-delete" onClick={() => this.deleteAccessRep(accRep.id)}>
                       Delete
                     </td>
                   </tr>
                 ))
               }
+            </tbody>
           </table>
         <span className="Error-Message">{this.state.error}</span>
       </div>
