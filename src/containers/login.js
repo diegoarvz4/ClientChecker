@@ -25,9 +25,9 @@ export default class Login extends React.Component {
       <div className="Login block-padding">
         <h2 className="Login-Title secondary-title">Login</h2>
         <form className="Login-Form block-padding" onSubmit={this.handleSubmit.bind(this)}>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input value={ username } name="username" onChange={this.handleForm}></input>
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input value={ password } name="password" onChange={this.handleForm}></input>
           <button className="btn" type="submit">Submit</button>
         </form>

@@ -47,16 +47,16 @@ export default class Employees extends React.Component {
       <div className="Employees">
         <h2>Employees</h2>
           <table style={{width: '100%'}}>
-            <thead>
+            <tr>
               <th>Name</th>
               <th>Username</th>
               <th></th>
               <th></th>
-            </thead>
+            </tr>
             <tbody>
               {
-                this.state.employees.map(employee => (
-                  <tr>
+                this.state.employees.map((employee, idx) => (
+                  <tr key={idx}>
                     <td>{employee.name}</td>
                     <td>{employee.username}</td>
                     <td className="AccessReports-view" onClick={() => this.toEmployee(employee)}>

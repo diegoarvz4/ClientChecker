@@ -67,17 +67,17 @@ export default class AccessReports extends React.Component {
       <div className="AccessReports">
         <h2>Access Reports</h2>
           <table style={{width: '100%'}}>
-            <thead>
+            <tr>
               <th>ENTRY</th>
               <th>EXIT</th>
               <th>EMPLOYEE</th>
               <th></th>
               <th></th>
-            </thead>
+            </tr>
             <tbody>
               {
-                this.state.access_reports.map(accRep => (
-                  <tr>
+                this.state.access_reports.map((accRep, idx) => (
+                  <tr key={idx}>
                     <td>{accRep.entry}</td>
                     <td>{accRep.exit}</td>
                     <td>{accRep.employee.name}</td>

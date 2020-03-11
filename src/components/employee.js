@@ -6,11 +6,11 @@ export default (props) => {
     <div class="Employee">
       <h2>Employee</h2>
       <table style={{width: '100%'}}>
-        <thead>
+        <tr>
           <th>Name</th>
           <th>Username</th>
           <th></th>
-        </thead>
+        </tr>
         <tr>
           <td>{props.employee.name}</td>
           <td>{props.employee.username}</td>

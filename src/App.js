@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Login from './containers/login';
 import Signup from './containers/signup';
 import AdminDashboard from './containers/admin_dashboard';
-
+import EmployeeDashboard from './containers/employee_dashboard';
 
 class App extends React.Component {
 
@@ -21,7 +21,8 @@ class App extends React.Component {
     toAminDash: false,
     toEmployeeDash: false,
     admin: false,
-    api_url: 'https://evening-tundra-23085.herokuapp.com'
+    api_url: 'https://evening-tundra-23085.herokuapp.com',
+    name: '',
   }
 
   componentDidMount() {
@@ -119,7 +120,7 @@ class App extends React.Component {
         <div className="App">
           <h1 className="primary-title">Employee Checker Client</h1>
           <div className="ApiUrl">
-            <label for="api_url">API URL:</label>
+            <label htmlFor="api_url">API URL:</label>
             <input value={this.state.api_url} name="api_url" onChange={(e) => {
               this.setState({
                 api_url: e.target.value
@@ -131,7 +132,7 @@ class App extends React.Component {
             this.state.auth_token
             ? this.state.admin
               ? <AdminDashboard auth_token={this.state.auth_token} api_url={this.state.api_url} />
-              : <div>Employee Dashboard</div>
+              : <EmployeeDashboard auth_token={this.state.auth_token} api_url={this.state.api_url}/>
             : this.state.toLogin 
               ? <div>
                   <Login login={this.handleLogin.bind(this)}/>

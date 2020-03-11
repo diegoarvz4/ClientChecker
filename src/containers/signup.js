@@ -32,13 +32,13 @@ export default class Signup extends React.Component {
       <div className="Signup block-padding">
         <h2 className="Signup-Title secondary-title">Signup</h2>
         <form className="Signup-Form block-padding" onSubmit={this.handleSubmit.bind(this)}>
-          <label for="username">Name</label>
+          <label htmlFor="username">Name</label>
           <input value={ name } name="name" onChange={this.handleForm}></input>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input value={ username } name="username" onChange={this.handleForm}></input>
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input value={ password } name="password" onChange={this.handleForm}></input>
-          <label for="password_confirmation">Password Confirmation</label>
+          <label htmlFor="password_confirmation">Password Confirmation</label>
           <input value={ password_confirmation } name="password_confirmation" onChange={this.handleForm}></input>
           <button className="btn" type="submit">Submit</button>
         </form>

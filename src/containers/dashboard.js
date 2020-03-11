@@ -122,8 +122,8 @@ export default class Dashboard extends React.Component {
                   <th>Employee</th>
                 </tr>
                 {
-                  this.state.access_reports.map((aR) => (
-                    <tr>
+                  this.state.access_reports.map((aR, idx) => (
+                    <tr key={idx}>
                       <td> {aR.entry}</td>
                       <td> {aR.exit}</td>    
                       <td> {aR.employee.name}</td>

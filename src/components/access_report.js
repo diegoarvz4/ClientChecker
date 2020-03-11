@@ -7,12 +7,12 @@ export default (props) => {
     <div class="AccessReport">
       <h2>User Access Report</h2>
       <table style={{width: '100%'}}>
-        <thead>
+        <tr>
           <th>Entry</th>
           <th>Exit</th>
           <th>Employee</th>
           <th></th>
-        </thead>
+        </tr>
         <tr>
           <td>{props.accRep.entry}</td>
           <td>{props.accRep.exit}</td>
